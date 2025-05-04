@@ -11,6 +11,8 @@ eureka:
       enabled: true
     register-with-eureka: true
     fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/
   instance:
     health-check-url-path: /actuator/health
     status-page-url-path: /actuator/info
