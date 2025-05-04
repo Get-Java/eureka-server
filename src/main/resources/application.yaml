@@ -7,10 +7,5 @@ spring:
 
 eureka:
   client:
-    healthcheck:
-      enabled: true
-    register-with-eureka: true
-    fetch-registry: true
-  instance:
-    health-check-url-path: /actuator/health
-    status-page-url-path: /actuator/info
+    register-with-eureka: false
+    fetch-registry: false
