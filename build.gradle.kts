@@ -33,6 +33,10 @@ dependencyManagement {
     }
 }
 
+tasks.named<org.springframework.boot.gradle.tasks.bundling.BootBuildImage>("bootBuildImage") {
+    builder.set("paketobuildpacks/builder-jammy-base")
+}
+
 tasks.withType<Test> {
     useJUnitPlatform()
 }
