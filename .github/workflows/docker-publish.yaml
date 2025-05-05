@@ -46,10 +46,9 @@ jobs:
           echo "IMAGE_NAME=$IMAGE_BASE:$IMAGE_TAG" >> $GITHUB_ENV
           echo "IMAGE_NAME_LATEST=$IMAGE_BASE:latest" >> $GITHUB_ENV
 
-      - name: Build and publish image using Buildpacks
+      - name: Build build in docker
         run: |
-          ./gradlew bootBuildImage \
-          --imageName=${IMAGE_BASE}:${IMAGE_TAG}
+          docker build -t ${IMAGE_BASE}:${IMAGE_TAG} .
 
       - name: Tag image as latest and push
         run: |
